@@ -1,0 +1,25 @@
+2024-10-16 13:18:31.385 | INFO     | __main__:<module>:105 - Namespace(TIME='2024-10-16 13_17_59', batch_size=1024, behaviors=['view', 'cart', 'buy'], check_point='model_pre_1_2024-10-08 12_13_12.pth', data_name='beibei', data_path='./data/beibei', decay=0.001, device='cuda:1', dim_qk=32, dim_v=64, distill_layers=2, distill_thres=0.5, distill_topK=12, distill_userK=20, embedding_size=64, epochs=100, gpu_no=1, if_load_model=True, ii_lambda=200, initializer_range=0.02, layers=2, loss_type='bpr', lr=0.001, message_dropout=0.25, metrics=['hit', 'ndcg'], min_epoch=5, model_name='main_1', model_path='./check_point', node_dropout=0.75, omega=1, pt_loop=50, reg_weight=0.001, test_batch_size=1024, testbatch=1024, topk=[1, 5, 10, 15, 20, 40], uu_lambda=100)
+2024-10-16 13:18:31.386 | INFO     | __main__:<module>:106 - BIPN(
+  (message_dropout): Dropout(p=0.25, inplace=False)
+  (user_embedding): Embedding(21717, 64, padding_idx=0)
+  (item_embedding): Embedding(7978, 64, padding_idx=0)
+  (global_Graph): LightGCN()
+  (Graph_encoder): ModuleDict(
+    (view): GraphEncoder(
+      (light): LightGCN()
+      (dropout): Dropout(p=0.75, inplace=False)
+    )
+    (cart): GraphEncoder(
+      (light): LightGCN()
+      (dropout): Dropout(p=0.75, inplace=False)
+    )
+    (buy): GraphEncoder(
+      (light): LightGCN()
+      (dropout): Dropout(p=0.75, inplace=False)
+    )
+  )
+  (attention): Mutual_Attention()
+  (bpr_loss): BPRLoss()
+  (emb_loss): EmbLoss()
+  (f): Sigmoid()
+)
